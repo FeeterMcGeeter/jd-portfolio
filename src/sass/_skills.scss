@@ -1,0 +1,22 @@
+.skills {
+
+    h2 {
+        margin-left: $mg-md;
+    }
+
+
+    &-container {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        color: $white;
+
+        i {
+            color: $color-primary;
+        }
+
+        p {
+            opacity: .8;
+        }
+    }
+}

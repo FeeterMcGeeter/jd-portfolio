@@ -1,0 +1,115 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    @include flexSpaceCenter;
+    padding: 1.25rem 9%;
+    background-color: $bg-primary;
+    color: $white;
+    z-index: 999;
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+
+        i {
+            color: $color-primary;
+            margin-right: 0.3125rem;
+        }
+    }
+
+    // NAVIGATION MENU
+    &-nav {
+
+        ul {
+            @include flexSpaceCenter;
+            gap: 1.25rem;
+        }
+        
+        .nav-link {
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        // &.open {
+        //     @include flexColCenter;
+        //     position: absolute;
+        //     top: 100%;
+        //     left: 0;
+        //     background-color: $color-primary;
+        //     width: 100%;
+        //     height: 100svh;
+        // }
+    }
+
+    &-burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+
+        .line {
+            width: 1.5625rem; // 25px
+            height: 0.1875rem; // 3px
+            background-color: $color-primary;
+            margin: 0.15625rem 0;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .line.open:nth-child(1) {
+            transform: translateY(0.5rem) rotate(45deg);
+        }
+
+        .line.open:nth-child(2) {
+            opacity: 0;
+        }
+
+        .line.open:nth-child(3) {
+            transform: translateY(-0.5rem) rotate(-45deg);
+        }
+    }
+
+    @include maxTablet {
+        .header-nav {
+            display: none;
+
+            ul {
+                flex-direction: column;
+
+                .nav-link {
+                    color: $bg-primary;
+                    font-weight: 500;
+                    font-size: 1.25rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+            
+            &.open {
+                @include flexColCenter;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $color-primary;
+                width: 100%;
+                height: 100svh;
+                z-index: 1000;
+                
+            }
+        }
+
+        .header-burger {
+            display: flex;
+        }
+    }
+}

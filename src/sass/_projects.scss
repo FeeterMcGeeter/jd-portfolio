@@ -1,0 +1,77 @@
+// Projects Section
+.projects {
+    background-color: $bg-primary;
+}
+
+// Card Carousel
+.card-carousel {
+    @include flexRowCenter;
+
+    .cards-wrapper {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        transition: transform 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    // Previous & Next Carousel Buttons
+    button {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border: none;
+        color: $white;
+        background-color: transparent;
+        border-radius: 0.25rem;
+        margin: 0 0.625rem;
+
+        &.prev {
+            margin-right: auto;
+        }
+
+        &.next {
+            margin-left: auto;
+        }
+
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    // Card Image
+    img {
+        width: 21.875rem;
+        border-radius: .3rem;
+    }
+
+    // Card Title
+    .card-title {
+        color: $color-primary;
+    }
+
+    // Card Description
+    p {
+        color: $white;
+        opacity: 0.8;
+        margin-bottom: $mg-sm;
+    }
+    
+    // Project Link Button
+    .card-link {
+        color: $bg-primary;
+        background-color: $color-primary;
+        border-radius: .3rem;
+        padding: 0.625rem 1rem;
+        text-transform: uppercase;
+    }
+}

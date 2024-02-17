@@ -1,0 +1,116 @@
+// ===== COLOR VARIABLES =====
+$color-primary: #FFCC73;
+$bg-primary: #191D28;
+$bg-secondary: #161922;
+$white: #FFF;
+$black: #000;
+
+// ===== FONT SIZE =====
+$font-default: 1rem; // 16px
+$font-headings: 1.875rem; // 30px
+
+// ===== BREAKPOINT MIXINS =====
+// 425px
+@mixin maxPhone {
+    @media screen and (max-width: 26.5625rem) {
+        @content;
+    }
+}
+
+// 768px
+@mixin minTablet {
+    @media screen and (min-width: 48em) {
+        @content;
+    }
+}
+
+@mixin maxTablet {
+    @media screen and (max-width: 48em) {
+        @content;
+    }
+}
+
+// 1200px
+@mixin minDesktop {
+    @media screen and (min-width: 75em) {
+        @content;
+    }
+}
+
+@mixin maxDesktop {
+    @media screen and (max-width: 75em) {
+        @content;
+    }
+}
+
+// ===== FLEX & GRID MIXINS =====
+@mixin flexColCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexRowCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexSpaceCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexAroundCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin gridCenter {
+    display: grid;
+    place-items: center;
+}
+
+// ===== MARGINS =====
+$mg-sm: 1.25rem; // 20px
+$mg-md: 2.5rem; // 40px
+$mg-lg: 5rem; // 80px
+
+// ===== GLOBAL RESET =====
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    height: 100svh;
+    padding: 1.25rem 9%;
+}
+
+.section-title {
+    font-size: $font-headings;
+    color: $color-primary;
+}
